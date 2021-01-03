@@ -1,6 +1,6 @@
 {
   "name": "screenshotapi.net",
-  "version": "1.0.4",
+  "version": "1.1.4",
   "description": "SDK for screenshotapi.net",
   "main": "index.js",
   "scripts": {

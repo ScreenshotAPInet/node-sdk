@@ -126,11 +126,11 @@ client.saveScreenshotToImage = async function(imagePath, params) {
             output: 'image',
             token: client.token,
         }, {
-            responseType: 'arraybuffer'
+            responseType: 'stream'
         });
 
-        fs.writeFileSync(imagePath, response.data, 'binary');
-
+        const dest = fs.createWriteStream(imagePath);
+        response.data.pipe(dest)
     } catch(error) {
         throw formatError(error);
     }
